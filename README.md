@@ -17,8 +17,3 @@ Plataforma Micro-SaaS Web Responsiva (Mobile-First) de planejamento alimentar pe
 - **Autenticação & Segurança:** Supabase Auth (`Cadastro` e `Login` reais) + Row-Level Security (RLS) habilitado em todas as 13 tabelas.
 - **Assistente Virtual:** **Mila** (personagem 3D animada no canto inferior direito + tela completa de chat).
 
-## Como Rodar com PostgreSQL via Docker Compose
-```bash
-cp .env.example .env
-docker compose up --build
-```
