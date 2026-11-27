@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  /* WCAG 2.1 AA — Foco visível claro para navegação por teclado */
+  *:focus-visible {
+    outline: 2px solid #E53935;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .mymita-card {
+    @apply bg-white dark:bg-[#1C252D] border border-[#E8ECEF] dark:border-[#26323D] rounded-2xl shadow-card dark:shadow-cardDark transition-colors;
+  }
+
+  .mymita-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 min-h-[44px] px-5 py-2.5 rounded-xl font-semibold text-white bg-[#E53935] hover:bg-[#C62828] active:scale-[0.99] transition disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .mymita-btn-green {
+    @apply inline-flex items-center justify-center gap-2 min-h-[44px] px-5 py-2.5 rounded-xl font-semibold text-white bg-[#2E7D32] hover:bg-[#236227] active:scale-[0.99] transition disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .mymita-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 min-h-[44px] px-4 py-2.5 rounded-xl font-medium bg-[#F5F5F5] dark:bg-[#171D23] text-[#202124] dark:text-[#F1F5F9] border border-[#E0E4E8] dark:border-[#26323D] hover:bg-[#EAECEF] dark:hover:bg-[#232D36] transition;
+  }
+
+  .mymita-input {
+    @apply w-full min-h-[44px] px-3.5 py-2.5 rounded-xl bg-[#F5F5F5] dark:bg-[#171D23] border border-[#DCE1E7] dark:border-[#2B3744] text-[#202124] dark:text-[#F1F5F9] placeholder-[#6B7280] dark:placeholder-[#94A3B8] focus:bg-white dark:focus:bg-[#1C252D] focus:border-[#E53935] transition;
+  }
+}
+
+/* Animações da Assistente 3D Mila */
+@keyframes milaFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes milaHalo {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.45), 0 10px 25px rgba(16, 20, 24, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(46, 125, 50, 0), 0 14px 30px rgba(46, 125, 50, 0.3);
+  }
+}
+
+@keyframes milaPop {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-mila-float {
+  animation: milaFloat 3.4s ease-in-out infinite;
+}
+
+.animate-mila-halo {
+  animation: milaHalo 2.6s ease-in-out infinite;
+}
+
+.animate-mila-pop {
+  animation: milaPop 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-mila-float,
+  .animate-mila-halo,
+  .animate-mila-pop {
+    animation: none;
+  }
+}

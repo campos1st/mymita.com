@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/mymita}
+    username: ${DB_USER:mymita}
+    password: ${DB_PASSWORD:mymita_secret_dev}
+    driver-class-name: org.postgresql.Driver
