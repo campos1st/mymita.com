@@ -17,24 +17,6 @@ Plataforma Micro-SaaS Web Responsiva (Mobile-First) de planejamento alimentar pe
 - **Autenticação & Segurança:** Supabase Auth (`Cadastro` e `Login` reais) + Row-Level Security (RLS) habilitado em todas as 13 tabelas.
 - **Assistente Virtual:** **Mila** (personagem 3D animada no canto inferior direito + tela completa de chat).
 
-## Como Rodar Localmente (Sem Docker)
-
-### 1. Back-end (Perfil `local` com H2 em modo PostgreSQL)
-```bash
-cd backend
-mvn spring-boot:run
-```
-- API REST: `http://localhost:8081/api/v1`
-- Swagger UI: `http://localhost:8081/swagger-ui.html`
-
-### 2. Front-end
-```bash
-cd frontend
-npm install
-npm run dev
-```
-- Aplicação Web: `http://localhost:5173`
-
 ## Como Rodar com PostgreSQL via Docker Compose
 ```bash
 cp .env.example .env
